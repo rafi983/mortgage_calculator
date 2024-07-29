@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+:root {
+  --lime: hsl(61, 70%, 52%);
+  --slate900: hsl(202, 55%, 16%);
+  --slate700: hsl(200, 24%, 40%);
+  --slate500: hsl(200, 26%, 54%);
+  --slate100: hsl(202, 86%, 94%);
+  --limeLight: hsl(61, 70%, 80%);
+  --red: hsl(4, 69%, 50%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input,
+label {
+  display: block;
+}
+
+input:focus {
+  outline: none;
+}
+
+.input-div:focus-within span {
+  background-color: var(--lime);
+  color: var(--slate900);
+}
+
+.checkmark {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  height: 15px;
+  width: 15px;
+  background-color: transparent;
+  border: 1px solid var(--slate900);
+  border-radius: 50%;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: white;
+  border: 1px solid var(--lime);
+}
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+.checked-container-color {
+  background-color: var(--limeLight);
+  border-color: var(--lime) !important;
+}
+.remove-color {
+  border-color: var(--slate700);
+}
+
+.input-error {
+  background-color: var(--red);
+  color: white;
+}
+
+.input-empty {
+  background-color: var(--slate100);
+  color: var(--slate700);
+}
+
+.input-div-empty {
+  border-color: var(--slate700);
+}
+.input-div-error {
+  border-color: var(--red);
+}
+
+.input-div-empty:hover {
+  border-color: var(--slate900);
+}
